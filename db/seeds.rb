@@ -36,4 +36,4 @@ answers = Answer.create([
                             {answer: 'maybe', question_id: questions[0].id}
                         ])
 
-user_tests = UserTest.create([{user_id: users[0].id, test_id: tests[0].id}, {user_id: users[0].id, test_id: tests[1].id}, {user_id: users[0].id, test_id: tests[2].id}])
+passed_test = PassedTest.create([{user_id: users[0].id, test_id: tests[0].id}, {user_id: users[0].id, test_id: tests[1].id}, {user_id: users[0].id, test_id: tests[2].id}])
