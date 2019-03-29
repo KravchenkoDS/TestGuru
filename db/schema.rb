@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2019_03_28_124043) do
 
   create_table "questions", force: :cascade do |t|
     t.text "body", null: false
+    t.bigint "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "test_id"
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
