@@ -26,9 +26,9 @@ tests = Test.create([
                     ])
 
 questions = Question.create([
-                                {body: 'Question_1_?', test_id: tests[0].id},
-                                {body: 'Question_2_?', test_id: tests[1].id},
-                                {body: 'Question_3_?', test_id: tests[2].id}])
+                                {body: 'To be, or not to be, that is the question_1_?', test_id: tests[0].id},
+                                {body: 'To be, or not to be, that is the question_2_?', test_id: tests[1].id},
+                                {body: 'To be, or not to be, that is the question_3_?', test_id: tests[2].id}])
 
 answers = Answer.create([
                             {answer: 'yes', correct: true, question_id: questions[0].id},
@@ -36,4 +36,8 @@ answers = Answer.create([
                             {answer: 'maybe', question_id: questions[0].id}
                         ])
 
-passed_test = PassedTest.create([{user_id: users[0].id, test_id: tests[0].id}, {user_id: users[0].id, test_id: tests[1].id}, {user_id: users[0].id, test_id: tests[2].id}])
+passed_test = PassedTest.create([
+                                    {user_id: users[0].id, test_id: tests[0].id},
+                                    {user_id: users[0].id, test_id: tests[1].id},
+                                    {user_id: users[0].id, test_id: tests[2].id}
+                                ])
