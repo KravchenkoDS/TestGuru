@@ -5,6 +5,13 @@ class Test < ApplicationRecord
   has_many :passed_tests, dependent: :destroy
   has_many :users, through: :passed_tests, dependent: :destroy
 
+  scope :easy, -> { where(level: (0..1)) }
+  scope :middle, -> { where(level: (2..4)) }
+  scope :hard, -> { where(level: (5..Float::INFINITY)) }
+
+  validates :name, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   def self.by_category(category)
     joins(:category)
         .where(categories: { title: category })
