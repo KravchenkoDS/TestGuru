@@ -20,24 +20,24 @@ categories = Category.create!([
                              ])
 
 tests = Test.create!([
-                        {name: 'Ruby on Rails', level: 3, category_id: categories[0].id},
-                        {name: 'C++', level: 2, category_id: categories[1].id},
-                        {name: 'Python', level: 1, category_id: categories[2].id}
+                        {name: 'Ruby on Rails', level: 3, category: categories[0]},
+                        {name: 'C++', level: 2, category: categories[1]},
+                        {name: 'Python', level: 1, category: categories[2]}
                     ])
 
 questions = Question.create!([
-                                {body: 'To be, or not to be, that is the question_1_?', test_id: tests[0].id},
-                                {body: 'To be, or not to be, that is the question_2_?', test_id: tests[1].id},
-                                {body: 'To be, or not to be, that is the question_3_?', test_id: tests[2].id}])
+                                {body: 'To be, or not to be, that is the question_1_?', test: tests[0]},
+                                {body: 'To be, or not to be, that is the question_2_?', test: tests[1]},
+                                {body: 'To be, or not to be, that is the question_3_?', test: tests[2]}])
 
 answers = Answer.create!([
-                            {answer: 'yes', correct: true, question_id: questions[0].id},
-                            {answer: 'no', question_id: questions[0].id},
-                            {answer: 'maybe', question_id: questions[0].id}
+                            {answer: 'yes', correct: true, question: questions[0]},
+                            {answer: 'no', question: questions[0]},
+                            {answer: 'maybe', question: questions[0]}
                         ])
 
 passed_test = PassedTest.create!([
-                                    {user_id: users[0].id, test_id: tests[0].id},
-                                    {user_id: users[0].id, test_id: tests[1].id},
-                                    {user_id: users[0].id, test_id: tests[2].id}
+                                    {user: users[0], test: tests[0]},
+                                    {user: users[0], test: tests[1]},
+                                    {user: users[0], test: tests[2]}
                                 ])
