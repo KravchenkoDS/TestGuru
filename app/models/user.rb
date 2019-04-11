@@ -8,4 +8,14 @@ class User < ApplicationRecord
   def test_by_level(level)
     tests.where(level: level)
   end
+
+  scope :test_by_level_scope, ->(level) {
+    case level
+    when (0..1) then Test.easy
+    when (2..4) then Test.middle
+    when (5..Float::INFINITY) then Test.hard
+    else nil
+    end
+  }
+
 end

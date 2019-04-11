@@ -18,4 +18,10 @@ class Test < ApplicationRecord
         .order(name: :desc)
         .pluck(:name)
   end
+
+  scope :by_category_scope, ->(category_name) {
+    joins(:category)
+        .where(categories: { name: category_name })
+  }
+
 end

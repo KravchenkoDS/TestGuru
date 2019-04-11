@@ -31,9 +31,9 @@ questions = Question.create!([
                                 {body: 'To be, or not to be, that is the question_3_?', test: tests[2]}])
 
 answers = Answer.create!([
-                            {answer: 'yes', correct: true, question: questions[0]},
-                            {answer: 'no', question: questions[0]},
-                            {answer: 'maybe', question: questions[0]}
+                            {body: 'yes', correct: true, question: questions[0]},
+                            {body: 'no', question: questions[0]},
+                            {body: 'maybe', question: questions[0]}
                         ])
 
 passed_test = PassedTest.create!([

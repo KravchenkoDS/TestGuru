@@ -3,10 +3,10 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
-  validates :answer, presence: true
+  validates :body, presence: true
   validate :validate_max_answers, on: :create
 
   def validate_max_answers
-    errors.add(:base, 'Must have 1 to 4 answers') if question.answers.count > 4
+    errors.add(:base, 'Must have 1 to 4 answers') if question.answers.count > 3
   end
 end
