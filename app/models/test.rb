@@ -14,12 +14,13 @@ class Test < ApplicationRecord
         .where(categories: { title: category_name })
   }
 
-  validates :name, presence: true, uniqueness: { scope: :level }
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-
   def self.by_category(category)
-    Test.by_category_scope(category)
+    by_category_scope(category)
+        .order(name: :desc)
         .pluck(:name)
   end
+
+  validates :name, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
 end
