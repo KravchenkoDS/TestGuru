@@ -16,7 +16,7 @@ class Test < ApplicationRecord
 
   def self.by_category(category)
     by_category_scope(category)
-        .order(name: :desc)
+        .order(title: :desc)
         .pluck(:name)
   end
 
