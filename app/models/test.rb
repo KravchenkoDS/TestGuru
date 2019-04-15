@@ -14,8 +14,7 @@ class Test < ApplicationRecord
 
   scope :by_category_scope, ->(category_name) {
     joins(:category)
-        .where(categories: { title: category_name }
-        .order(name: :desc))
+        .where(categories: { title: category_name })
   }
 
   def self.by_category(category)
