@@ -1,14 +1,10 @@
-<form action="/tests/<%= params[:test_id] %>/questions" method="POST">
+<form action="/tests/<%= params[:test_id] %>/questions" method="post">
 
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
   <p>
-
-    <label for="test-body">Body</label>
-
-    <input type="text" name="question[body]" id="test-body">
-
+    <libel for="question_body">Question: </libel>
+    <input type="text" name="question[body]" id="question_body">
     <input type="submit" value="Create">
-
   </p>
 </form>
