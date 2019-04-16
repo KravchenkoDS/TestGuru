@@ -1,1 +1,18 @@
-<h1>TestGuru main page</h1>
+<h1>List avaliable tests</h1>
+
+<table>
+  <tr>
+    <th>Name test</th>
+    <th>Questions</th>
+    <th>Level</th>
+  </tr>
+
+  <% @tests.each do |test| %>
+    <tr>
+      <td><%= test.name %></td>
+      <td><%= test.questions.count %></td>
+      <td><%= level_test(test) %></td>
+      <td><%= link_to 'Show', test_path(test) %></td>
+    </tr>
+  <% end %>
+</table>
