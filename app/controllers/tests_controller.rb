@@ -5,7 +5,7 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show
+  def show;
   end
 
   private
