@@ -4,10 +4,10 @@
   <p>
     <%= render 'common/errors', resourse: question %>
     <%= form.label :body %><br>
-    <%= form.text_field :body, id: :question_body %>
+    <%= form.text_field :body %>
   </p>
 
   <p><%= form.submit %></p>
 <% end %>
 
-<%= link_to 'Back', test_path(question.test) %>
+<%= link_to 'Back', test_path(question.test) %>-->
