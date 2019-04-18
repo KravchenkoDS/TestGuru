@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def show
+  def show;
   end
 
   def new
@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
+  def edit;
   end
 
   def update
