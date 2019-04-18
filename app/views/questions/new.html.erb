@@ -1,2 +1,5 @@
 <%= render 'form', question: @question, test: @test %>
+
+<%= link_to 'Back', test_path(@question.test) %>
+
 <%= render 'common/footer' %>

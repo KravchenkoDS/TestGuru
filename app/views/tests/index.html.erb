@@ -1,21 +1,24 @@
 <h1>List avaliable tests</h1>
 
-<table>
-  <tr>
-    <th>Name test</th>
-    <th>Questions</th>
-    <th>Level</th>
-  </tr>
+<p>
+  <%= link_to 'New test', new_test_path %>
+</p>
 
-  <% @tests.each do |test| %>
+<% if @tests.present? %>
+  <table>
     <tr>
-      <td><%= test.name %></td>
-      <td><%= test.questions.count %></td>
-      <td><%= level_test(test) %></td>
-      <td><%= link_to 'Show', test_path(test) %></td>
+      <th>Title</th>
+      <th>Level</th>
+      <th>Questions</th>
+      <th colspan="3">Actions</th>
     </tr>
-  <% end %>
-</table>
+
+    <%= render @tests %>
+
+  </table>
+<% else %>
+  <p>There is no tests available.</p>
+<% end %>
 
 
 <%= render 'common/footer' %>
