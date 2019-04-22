@@ -4,22 +4,22 @@
 
   <p>
     <%= form.label :name %>
-    <%= form.text_field :name, id: :test_name %>
+    <%= form.text_field :name %>
   </p><br>
 
   <p>
     <%= form.label :level %>
-    <%= form.text_field :level, id: :test_level %>
+    <%= form.text_field :level %>
   </p><br>
 
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.collection_select :category_id, Category.all, :title, prompt: true %>
   </p><br>
 
   <p>
     <%= form.label :author_id %>
-    <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
+    <%= form.collection_select :author_id, User.all, :name, prompt: true %>
   </p><br>
 
   <p><%= form.submit %></p>
