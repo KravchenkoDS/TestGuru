@@ -1,44 +1,57 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create new]
-  before_action :find_question, only: %i[show destroy]
+  before_action :set_test, only: [:new, :create]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def show; end
-
-  def index
-    @question = @test.questions
-    render inline: '<% @question.each { |q| %><p><%= q.body %></p><% } %>'
+  def show;
   end
 
-  def new; end
+  def new
+    @question = @test.questions.new
+  end
 
   def create
-    @test.questions.create(params_question)
-    render inline: '<h1>Question created</h1>'
+    @question = @test.questions.new(question_params)
+
+    if @question.save
+      redirect_to test_path(@test)
+    else
+      render :new
+    end
+  end
+
+  def edit;
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to test_path(@question.test)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @question.destroy
-    render inline: '<h1>Question deleted</h1>'
+    redirect_to test_path(@question.test)
   end
 
   private
 
-  def find_test
+  def set_test
     @test = Test.find(params[:test_id])
   end
 
-  def find_question
+  def set_question
     @question = Question.find(params[:id])
   end
 
-  def params_question
-    params.require(:question).permit(:body)
+  def question_params
+    params.require(:question).permit(:body, :test_id)
   end
 
-  def rescue_from_question_not_found
-    render plain: 'Request not found'
+  def rescue_with_question_not_found
+    render plain: 'Question was not found'
   end
-
 end
