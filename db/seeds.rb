@@ -36,8 +36,10 @@ answers = Answer.create!([
                             {body: 'maybe', question: questions[0]}
                         ])
 
+
+
 passed_test = PassedTest.create!([
-                                    {user: users[0], test: tests[0]},
-                                    {user: users[0], test: tests[1]},
-                                    {user: users[0], test: tests[2]}
+                                    {user: users[0], test: tests[0], status: 'Finished' },
+                                    {user: users[0], test: tests[1], status: 'Not started' },
+                                    {user: users[0], test: tests[2], status: 'Not started' }
                                 ])
