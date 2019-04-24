@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_142547) do
   end
 
   create_table "passed_tests", force: :cascade do |t|
-    t.string "status"
     t.bigint "user_id"
     t.bigint "test_id"
     t.datetime "created_at", null: false

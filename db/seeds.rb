@@ -57,8 +57,8 @@ Answer.create(
 # Results
 
 PassedTest.create(
-    [{user: john, test: html, status: 'Finished'},
-     {user: john, test: css, status: 'Not started'},
-     {user: daniel, test: ruby, status: 'Not finished'},
-     {user: bill, test: go_lang, status: 'Finished'}]
+    [{user: john, test: html},
+     {user: john, test: css,},
+     {user: daniel, test: ruby},
+     {user: bill, test: go_lang}]
 )
