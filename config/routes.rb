@@ -6,9 +6,10 @@ Rails.application.routes.draw do
       resources :answers, shallow: true, except: :index
     end
 
-    member do
-      post :start
-    end
+    # member do
+    #   post :start
+    # end
+    post :start, on: :member
   end
 
 

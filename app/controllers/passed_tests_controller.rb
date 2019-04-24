@@ -10,7 +10,7 @@ class PassedTestsController < ApplicationController
     @passed_test.accept!(params[:answer_ids])
 
     if @passed_test.completed?
-      redirect_to result_test_passage_path(@passed_test)
+      redirect_to result_passed_test_path(@passed_test)
     else
       render :show
     end

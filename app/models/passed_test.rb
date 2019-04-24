@@ -1,4 +1,7 @@
 class PassedTest < ApplicationRecord
+
+  SUCCESS_SCORE = 85
+
   belongs_to :user
   belongs_to :test
 
@@ -6,9 +9,7 @@ class PassedTest < ApplicationRecord
 
   before_validation :before_validation_set_question, on: %i[create update]
 
-  SUCCESS_SCORE = 85
-
-  def passed_test?
+  def passed?
     success_percentage >= SUCCESS_SCORE
   end
 
@@ -17,9 +18,12 @@ class PassedTest < ApplicationRecord
   end
 
   def accept!(answer_ids)
+=begin
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
+=end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
   end
@@ -39,7 +43,8 @@ class PassedTest < ApplicationRecord
   private
 
   def before_validation_set_question
-    if current_question.nil? && test.present?
+    #if current_question.nil? && test.present?
+    if new_record?
       set_first_question
     else
       set_next_question
