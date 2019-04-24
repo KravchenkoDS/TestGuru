@@ -1,7 +1,6 @@
 module PassedTestsHelper
 
   def success_percentage_result_message(passed_test)
-    #if passed_test.test_passed?
     if passed_test.passed?
       result_status = 'success'
       message = 'SUCCESS! Test was completed!'
