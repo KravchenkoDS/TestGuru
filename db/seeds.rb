@@ -7,37 +7,58 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-users = User.create!([
-                        {name: 'UserNo1', email: 'UserNo1@mail.ru'},
-                        {name: 'UserNo2', email: 'UserNo2@mail.ru'},
-                        {name: 'UserNo3', email: 'UserNo3@mail.ru'}
-                     ])
+# Categories
 
-categories = Category.create!([
-                                 {title: 'Web development'},
-                                 {title: 'Game development'},
-                                 {title: 'Software development'}
-                             ])
+frontend = Category.create(title: 'Frontend')
+backend = Category.create(title: 'Backend')
+mobile = Category.create(title: 'Mobile Development')
 
-tests = Test.create!([
-                        {name: 'Ruby on Rails', level: 3, category: categories[0]},
-                        {name: 'C++', level: 2, category: categories[1]},
-                        {name: 'Python', level: 1, category: categories[2]}
-                    ])
+# Users
 
-questions = Question.create!([
-                                {body: 'To be, or not to be, that is the question_1_?', test: tests[0]},
-                                {body: 'To be, or not to be, that is the question_2_?', test: tests[1]},
-                                {body: 'To be, or not to be, that is the question_3_?', test: tests[2]}])
+john = User.create(name: 'John', email: 'johnSmith@testmail.org')
+daniel = User.create(name: 'Daniel', email: 'danie07@yahoomail.org')
+bill = User.create(name: 'Bill', email: 'BillyBoy@gmailtest.org')
 
-answers = Answer.create!([
-                            {body: 'yes', correct: true, question: questions[0]},
-                            {body: 'no', question: questions[0]},
-                            {body: 'maybe', question: questions[0]}
-                        ])
 
-passed_test = PassedTest.create!([
-                                    {user: users[0], test: tests[0]},
-                                    {user: users[0], test: tests[1]},
-                                    {user: users[0], test: tests[2]}
-                                ])
+# Tests
+
+swift = mobile.tests.create(name: 'Swift', level: 4, author: daniel)
+ruby = backend.tests.create(name: 'Ruby', level: 2, author: bill)
+html = frontend.tests.create(name: 'HTML', level: 0, author: john)
+css = frontend.tests.create(name: 'CSS', level: 1, author: john)
+go_lang = backend.tests.create(name: 'Go', level: 3, author: bill)
+
+
+# Questions
+
+questions = Question.create(
+    [{body: 'What is the use of figure tag in HTML 5?', test: html},
+     {body: 'What are the entities in HTML?', test: html},
+     {body: 'Who created the Ruby Language?', test: ruby},
+     {body: 'What is the default value of the instance variable?', test: ruby},
+     {body: 'Why should one use Go programming language?', test: go_lang},
+     {body: 'Why should one use Swift programming language in 2018?', test: swift}]
+)
+
+
+# Answers
+
+Answer.create(
+    [{body: 'Correct answer to HTML', correct: true, question: questions[0]},
+     {body: 'Incorrect answer to HTML', correct: false, question: questions[0]},
+     {body: 'Matz', correct: true, question: questions[2]},
+     {body: 'John Doe', correct: false, question: questions[2]},
+     {body: 'Linus Torvalds', correct: false, question: questions[2]},
+     {body: 'Stefan Wintermeyer', correct: false, question: questions[2]},
+     {body: 'Nil', correct: true, question: questions[3]},
+     {body: 'false', correct: false, question: questions[3]}]
+)
+
+# Results
+
+PassedTest.create(
+    [{user: john, test: html},
+     {user: john, test: css,},
+     {user: daniel, test: ruby},
+     {user: bill, test: go_lang}]
+)
