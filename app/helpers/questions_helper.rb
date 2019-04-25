@@ -1,6 +1,13 @@
 module QuestionsHelper
   def question_header(question)
-    header = question.persisted? ? "Edit " : "Create new "
-    header + "#{question.test.name} #{level_test(question.test)} test question."
+    test_title = question.test.title
+
+    name = if question.new_record?
+             "Create New #{test_title} Question"
+           else
+             "Edit #{test_title} Question"
+           end
+
+    content_tag('h1', name)
   end
 end
