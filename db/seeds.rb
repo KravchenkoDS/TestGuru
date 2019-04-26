@@ -16,8 +16,8 @@ mobile = Category.create(title: 'Mobile Development')
 # Users
 
 john = User.create(name: 'JohnSmith', email: 'johnSmith@testmail.org', password: 'o4en_sekpetniy_parol')
-daniel = User.create(name: 'DanielDefo', email: 'danie07@yahoomail.org', password: 'o4en_sekpetniy_parol')
-bill = User.create(name: 'BillGates', email: 'BillyBoy@gmailtest.org', password: 'o4en_sekpetniy_parol')
+daniel = User.create(name: 'DanielDefo', email: 'danie07defo@yahoomail.org', password: 'o4en_sekpetniy_parol')
+bill = User.create(name: 'BillGates', email: 'SillyBillyBoy@gmailtest.org', password: 'o4en_sekpetniy_parol')
 
 
 # Tests
