@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy, :start]
-  #before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: %i[show edit update destroy start]
 
   def index
     @tests = Test.all
@@ -10,6 +9,7 @@ class TestsController < ApplicationController
 
   def new
     @test = Test.new
+    @categories = Category.all
   end
 
   def create
@@ -22,7 +22,9 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @categories = Category.all
+  end
 
   def update
     if @test.update(test_params)
@@ -49,6 +51,6 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:name, :level, :category_id, :author_id)
   end
 end
