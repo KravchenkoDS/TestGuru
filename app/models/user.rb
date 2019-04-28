@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  # has_many :tests_created, class_name: 'Test', foreign_key: :author_id
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
   has_many :passed_tests, dependent: :destroy
   has_many :tests, through: :passed_tests, dependent: :destroy
@@ -24,6 +23,6 @@ class User < ApplicationRecord
   end
 
   def passage_test(test)
-    passed_tests.order(id: :desc).find_by(test: test)
+    passed_tests.order(id: :desc).find_by(test_id: test.id)
   end
 end

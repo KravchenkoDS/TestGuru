@@ -2,9 +2,7 @@ class SessionsController < ApplicationController
 
   skip_before_action :authenticate_user!
 
-  def new
-
-  end
+  def new; end
 
   def create
     user_authenticated = User.authenticate(email: params[:email], password: params[:password])

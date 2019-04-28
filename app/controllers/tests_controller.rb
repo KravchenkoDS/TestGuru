@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: [:show, :edit, :update, :destroy, :start]
+  #before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   def index
     @tests = Test.all
@@ -37,7 +38,6 @@ class TestsController < ApplicationController
   end
 
   def start
-    set_test
     current_user.tests.push(@test)
     redirect_to current_user.passage_test(@test)
   end
