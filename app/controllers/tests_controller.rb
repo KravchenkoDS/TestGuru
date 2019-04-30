@@ -1,15 +1,15 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: %i[show edit update destroy start]
 
   def index
     @tests = Test.all
   end
 
-  def show;
-  end
+  def show; end
 
   def new
     @test = Test.new
+    @categories = Category.all
   end
 
   def create
@@ -22,7 +22,8 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit;
+  def edit
+    @categories = Category.all
   end
 
   def update
@@ -38,6 +39,11 @@ class TestsController < ApplicationController
     redirect_to tests_path
   end
 
+  def start
+    current_user.tests.push(@test)
+    redirect_to current_user.passage_test(@test)
+  end
+
   private
 
   def set_test
@@ -45,6 +51,6 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:name, :level, :category_id, :author_id)
   end
 end

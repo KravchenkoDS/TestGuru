@@ -15,7 +15,6 @@ module PassedTestsHelper
     result_body.join.html_safe
   end
 
-  # result_status == ['success', 'fail']
   def div_percentage_helper(number, result_status)
     content_tag(:div, class: "percentage #{result_status}") do
       number_to_percentage(number, precision: 0)

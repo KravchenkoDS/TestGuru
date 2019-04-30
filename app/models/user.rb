@@ -3,14 +3,26 @@ class User < ApplicationRecord
   has_many :passed_tests, dependent: :destroy
   has_many :tests, through: :passed_tests, dependent: :destroy
 
-  validates :email, presence: true
+
+  VALID_EMAIL_PATTERN = /\A\w+@\w+\.\w+\z/
+
+  validates :name, presence: true
+  validates :email, presence: true,
+            format: VALID_EMAIL_PATTERN,
+            uniqueness: { case_sensitive: false }
+
+  has_secure_password
+
+  def self.authenticate(email:, password:)
+    user = User.find_by(email: email)
+    user&.authenticate(password)
+  end
 
   def test_by_level(level)
     tests.where(level: level)
   end
 
   def passage_test(test)
-    #passed_tests.order(id: :desc).find_by(test_id: test.id)
-    passed_tests.order(id: :desc).find_by(test: test)
+    passed_tests.order(id: :desc).find_by(test_id: test.id)
   end
 end

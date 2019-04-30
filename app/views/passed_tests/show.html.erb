@@ -1,6 +1,6 @@
 <h1>Passing the <%= @passed_test.test.name %> Test</h1>
 
-<% if @passed_test.current_question.nil? %>
+<% if @passed_test.test.questions.none? %>
 
   <p>
     There is no available Questions <br>
@@ -8,7 +8,7 @@
 
   <%= link_to 'Back to Tests', tests_path %>
 
-<% elsif @passed_test.current_question.answers.count.zero? %>
+<% elsif @passed_test.current_question.answers.none? %>
 
   <%= render 'header_and_question' %>
 
