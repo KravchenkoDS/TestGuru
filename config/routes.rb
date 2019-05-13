@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
+  devise_for :users
+
   get :sign_up, to: 'users#new'
   get :login,   to: 'sessions#new'
   delete :logout,  to: 'sessions#destroy'
