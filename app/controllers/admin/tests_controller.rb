@@ -6,8 +6,7 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @test = Test.new
@@ -23,8 +22,7 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @test.update(test_params)
