@@ -1,6 +1,6 @@
 <h1><%= "Name test: #{@test.name}" %></h1>
 <h1><%= "Level test: #{level_test(@test)}" %></h1>
 <p><%= render @test.questions %></p>
-<%= link_to 'New question', new_test_question_path(test_id: params[:id]) %><br>
-<%= link_to 'Back', tests_path %>
+<%= link_to 'New question', new_admin_test_question_path(test_id: params[:id]) %><br>
+<%= link_to 'Back', admin_tests_path %>
 
