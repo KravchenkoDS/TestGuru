@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+=begin
   before_action :authenticate_user!
 
   helper_method :current_user,
@@ -21,5 +22,6 @@ class ApplicationController < ActionController::Base
   def logged_in?
     @current_user.present?
   end
+=end
 
 end

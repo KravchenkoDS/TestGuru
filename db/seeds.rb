@@ -15,9 +15,12 @@ mobile = Category.create(title: 'Mobile Development')
 
 # Users
 
-john = User.create(name: 'JohnSmith', email: 'johnSmith@testmail.org', password: 'o4en_sekpetniy_parol')
-daniel = User.create(name: 'DanielDefo', email: 'danie07defo@yahoomail.org', password: 'o4en_sekpetniy_parol')
-bill = User.create(name: 'BillGates', email: 'SillyBillyBoy@gmailtest.org', password: 'o4en_sekpetniy_parol')
+john = User.create(first_name: 'JohnSmith', email: 'johnSmith@testmail.org',
+                   type: 'User', password: 'o4en_sekpetniy_parol', confirmed_at: Time.now)
+daniel = User.create(first_name: 'DanielDefo', email: 'danie07defo@yahoomail.org',
+                     type: 'Admin', password: 'o4en_sekpetniy_parol', confirmed_at: Time.now)
+bill = User.create(first_name: 'BillGates', email: 'SillyBillyBoy@gmailtest.org',
+                   type: 'Admin', password: 'o4en_sekpetniy_parol', confirmed_at: Time.now)
 
 
 # Tests
@@ -58,7 +61,7 @@ Answer.create(
 
 PassedTest.create(
     [{user: john, test: html},
-     {user: john, test: css,},
+     {user: john, test: css, },
      {user: daniel, test: ruby},
      {user: bill, test: go_lang}]
 )
