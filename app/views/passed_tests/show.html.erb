@@ -3,20 +3,20 @@
 <% if @passed_test.test.questions.none? %>
 
   <p>
-    There is no available Questions <br>
+    <%= t('.no_available_questions') %><br>
   </p>
 
-  <%= link_to 'Back to Tests', tests_path %>
+  <%= link_to t('navigation.back'), tests_path %>
 
 <% elsif @passed_test.current_question.answers.none? %>
 
   <%= render 'header_and_question' %>
 
   <p>
-    There is no available Answers <br>
+    <%= t('.no_available_answers') %><br>
   </p>
 
-  <%= link_to 'Back to Tests', tests_path %>
+  <%= link_to t('navigation.back'), tests_path %>
 
 <% else %>
 
