@@ -136,4 +136,4 @@ en:
   user:
     sessions:
       create:
-      hello: "Hello"
+      hello: "Hello %{user_name}"
