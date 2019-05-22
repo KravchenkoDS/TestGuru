@@ -30,7 +30,7 @@ en:
     edit:
       header: "Edit %{test_title} Question"
 
-  test_passages_helper:
+  passed_tests_helper:
     current_question: "Current Question"
     result:
       success: "SUCCESS! Test was completed!"
@@ -56,6 +56,8 @@ en:
         actions: "Actions"
     test:
       start_button: "Start"
+    start:
+      good_luck_flash: "Good Luck!"
 
   passed_tests:
     result:
@@ -64,7 +66,7 @@ en:
       questions_with_correct_answers: "Questions with Correct Answers: %{correct_questions}"
       all_tests: "All Tests"
     show:
-      header: "Passing the %{test_passage_test_title} Test"
+      header: "Passing the %{passed_test_name} Test"
       no_available_questions: "There is no available Questions"
       no_available_answers: "There is no available Answers"
 
@@ -83,7 +85,7 @@ en:
         no_tests_available: "There is no tests available."
         new_test: "New test"
       edit:
-        header: "Edit %{test_title} Test"
+        header: "Edit %{test_name} Test"
       new:
         header: "Create New Test"
       update:

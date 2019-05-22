@@ -27,4 +27,8 @@ module PassedTestsHelper
     end
   end
 
+  def header_current_progress(passed_test)
+    passed_test.current_question_index / passed_test.total_questions.to_f * 100
+  end
+
 end

@@ -1,19 +1,28 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
+<div class="card border-primary">
+  <div class="card-body">
+    <%= form_with model: [:admin, @test], local: true do |form| %>
 
-  <p>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </p><br>
+      <%= render 'common/errors', resource: @test %>
 
-  <p>
-    <%= form.label :level %>
-    <%= form.text_field :level %>
-  </p><br>
+      <div class="form-group">
+        <p>
+          <%= form.label :name %>
+          <%= form.text_field :name, id: :test_name, class: 'form-control' %>
+        </p><br>
 
-  <p>
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true  %>
-  </p><br>
+        <p>
+          <%= form.label :level %>
+          <%= form.text_field :level, id: :test_level, class: 'form-control' %>
+        </p><br>
 
-  <p><%= form.submit %></p>
-<% end %>
+        <p>
+          <%= form.label :category_id %>
+          <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true,
+                                     class: 'form-control' %>
+        </p><br>
+
+        <p><%= form.submit class: "btn btn-outline-primary" %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
