@@ -10,6 +10,7 @@ ru:
       log_out: "Log Out"
       log_in: "Log In"
       or: "or"
+      sign_up: "Sign Up"
       start_button: "Старт"
     footer:
       app_description_with_url: "Learning project in online-school Thinknetica"
