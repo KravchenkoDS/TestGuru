@@ -8,7 +8,7 @@ class TestsController < ApplicationController
 
   def start
     current_user.tests.push(@test)
-    redirect_to current_user.passage_test(@test)
+    redirect_to current_user.passage_test(@test), notice: t('.good_luck_flash')
   end
 
   private
