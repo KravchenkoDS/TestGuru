@@ -30,7 +30,7 @@ ru:
     edit:
       header: "Редактировать %{test_title} Вопрос"
 
-  test_passages_helper:
+  passed_tests_helper:
     current_question: "Текущий Вопрос"
     result:
       success: "УСПЕХ! Тест был успешно завершён!"
@@ -58,6 +58,8 @@ ru:
         actions: "Действия"
     test:
       start_button: "Старт"
+    start:
+      good_luck_flash: "Удачи!"
 
   passed_tests:
     result:
@@ -66,7 +68,7 @@ ru:
       questions_with_correct_answers: "Вопросов с правильными Ответами: %{correct_questions}"
       all_tests: "Все Тесты"
     show:
-      header: "Прохождение %{test_passage_test_title} Теста"
+      header: "Прохождение %{passed_test_name} Теста"
       no_available_questions: "Нет доступных Вопросов"
       no_available_answers: "Нет доступных Ответов"
 
@@ -85,7 +87,7 @@ ru:
         no_tests_available: "Нет доступных тестов"
         new_test: "Новый тест"
       edit:
-        header: "Редактировать %{test_title} Тест"
+        header: "Редактировать %{test_name} Тест"
       new:
         header: "Создать Новый Тест"
       update:

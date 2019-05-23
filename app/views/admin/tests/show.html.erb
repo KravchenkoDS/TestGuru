@@ -1,9 +1,13 @@
-<h1><%= t('.name') %> <%= @test.name %> </h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <h1><%= t('.title') %> <%= @test.name %> </h1>
 
-<h1><%= t('.level') %> <%= level_test(@test) %> </h1>
+    <h1><%= t('.level') %> <%= level_test(@test) %> </h1>
 
-<p><%= render @test.questions %></p>
+    <p><%= render @test.questions %></p>
 
-<%= link_to t('navigation.new_question'), new_admin_test_question_path(test_id: params[:id]) %><br>
+    <%= link_to t('navigation.new_question'), new_admin_test_question_path(test_id: params[:id]) %><br>
 
-<%= link_to t('navigation.back'), admin_tests_path %>
+    <%= link_to t('navigation.back'), admin_tests_path %>
+  </div>
+</div>
