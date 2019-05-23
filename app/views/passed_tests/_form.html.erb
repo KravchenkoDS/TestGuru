@@ -11,6 +11,6 @@
     </div>
   <% end %>
 
+  <p><%= link_to t('passed_tests_helper.gist_question'), gists_passed_test_path(@passed_test), method: :post %></p>
   <%= form.submit t('passed_tests_helper.next_button'), class: "btn btn-primary" %>
-
 <% end %>
