@@ -36,6 +36,7 @@ ru:
       success: "УСПЕХ! Тест был успешно завершён!"
       fail: "ПРОВАЛ! Пожалуйста, повторите ещё раз."
     next_button: "Далее"
+    gist_question: "Gist Вопрос"
 
   shared:
     errors:
@@ -71,6 +72,9 @@ ru:
       header: "Прохождение %{passed_test_name} Теста"
       no_available_questions: "Нет доступных Вопросов"
       no_available_answers: "Нет доступных Ответов"
+    gist:
+      success: "Gist успешно сохранён! Ссылка: %{url}"
+      failure: "Во время сохранения gists произошла ошибка!"
 
   admin:
     tests:
@@ -99,6 +103,14 @@ ru:
         level: "Уровень"
         author: "Автор"
         questions: "Вопросы"
+    gists:
+      index:
+        table:
+          question: "Вопрос"
+          gist_url: "Gist URL"
+          user: "Пользователь"
+        no_gists_available: "Нет доступных Gists"
+        header: "Список всех Gists"
 
     questions:
       list:
@@ -141,3 +153,5 @@ ru:
     sessions:
       create:
       hello: "Привет %{user_name}"
+  gist_question_service:
+    question_about: "Вопрос про %{test_name} от TestGuru"

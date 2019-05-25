@@ -1,5 +1,5 @@
 <div>
   <% flash.each do |name, msg| %>
-    <%= flash_message(name, msg) %>
+    <%= flash_message(name, sanitize(msg)) %>
   <% end %>
 </div>
