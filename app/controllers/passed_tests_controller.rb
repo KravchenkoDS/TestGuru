@@ -23,14 +23,16 @@ class PassedTestsController < ApplicationController
     gist_url = result.html_url
 
     flash_options = if gist_service.success?
+                      gist_url_tag = %(<a href='#{gist_url}' target="_blank">gist.github.com</a>)
+
                       current_user.gists.create(question: @passed_test.current_question,
                                                 url: gist_url)
-                      { notice: t('.success', url: gist_url) }
+                      flash[:success] = t('.success', url: gist_url_tag)
                     else
-                      { alert: t('.failure') }
+                      flash[:failure] = t('.failure')
                     end
 
-    redirect_to @passed_test, flash_options
+    redirect_to @passed_test
   end
 
   private
