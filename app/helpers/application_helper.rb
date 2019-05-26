@@ -15,4 +15,13 @@ module ApplicationHelper
   def github_url(author, repo)
     link_to 'GitHub', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
+
+  # Using ApplicationHelper#common_translations
+  # and JS (window.I18n) in LayoutsAdmin#header
+  def common_translations
+    # I18n.backend.send(:init_translations) unless I18n.backend.initialized?
+    @translations ||= I18n.backend.send(:translations)
+    # Read only 'actions' from commons.[:locale].yml
+    @translations[I18n.locale].with_indifferent_access['actions']
+  end
 end
