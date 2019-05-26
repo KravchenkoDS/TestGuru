@@ -3,7 +3,7 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User', optional: true
   has_many :questions, dependent: :nullify #:destroy
-  has_many :passed_tests, dependent: :nullify #:destroy
+  has_many :passed_tests, dependent: :destroy #:destroy
   has_many :users, through: :passed_tests, dependent: :destroy
 
   validates :name, presence: true, uniqueness: {scope: :level}
