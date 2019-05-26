@@ -15,7 +15,7 @@ en:
 
     label:
       test:
-        title: "Title"
+        name: "Title"
         level: "Level"
         category_id: "Category"
       question:

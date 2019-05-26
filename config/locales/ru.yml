@@ -15,7 +15,7 @@ ru:
 
     label:
       test:
-        title: "Название"
+        name: "Название"
         level: "Уровень"
         category_id: "Категория"
       question:
