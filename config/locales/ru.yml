@@ -103,6 +103,8 @@ ru:
         level: "Уровень"
         author: "Автор"
         questions: "Вопросы"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         table:
