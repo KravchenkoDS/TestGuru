@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.action_mailer.default_url_options = { host: 'testguru-project.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'tranquil-forest-22020.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -23,7 +23,7 @@ Rails.application.configure do
       user_name:              ENV['MAIL_LOGIN'],
       password:               ENV['MAIL_PASS'],
       authentication:         'plain',
-      domain:                 'testguru-project.herokuapp.com',
+      domain:                 'tranquil-forest-22020.herokuapp.com',
       enable_starttls_auto:   true
   }
 
