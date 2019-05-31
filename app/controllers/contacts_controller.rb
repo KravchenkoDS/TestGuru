@@ -6,8 +6,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-
-    if @contact.save
+    if @contact.valid?
       ContactsMailer.contact_email(@contact).deliver_now
       redirect_to new_contact_path, notice: t('.success')
     else
@@ -18,7 +17,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :body)
+    params.require(:contact).permit(:title, :name, :email, :body)
   end
-
 end

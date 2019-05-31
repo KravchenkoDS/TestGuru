@@ -6,8 +6,8 @@ class ContactsMailer < ApplicationMailer
     @name = contact.name
     @email = contact.email
     @body = contact.body
+    @title = contact.title
 
     mail(from: @email)
   end
-
 end

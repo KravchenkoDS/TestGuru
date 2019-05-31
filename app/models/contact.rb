@@ -1,7 +1,7 @@
-class Contact < ApplicationRecord
+class Contact
+  include ActiveModel::Model
 
-  validates :name,  presence: true
-  validates :email, presence: true
-  validates :body,  presence: true
+  attr_accessor :title, :email, :body, :name
 
+  validates :title, :email, :body, :name, presence: true
 end
