@@ -161,3 +161,11 @@ ru:
   contacts_mailer:
     contact_email:
     subject: "TestGuru Project - Контактная Форма"
+
+  contacts:
+    new:
+      header: "Форма обратной связи"
+      send_button: "Отправить"
+    create:
+      success: "E-mail успешно отправлено"
+      failed: "Ошибка при отправке E-mail'a"
