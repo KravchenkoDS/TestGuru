@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  devise_for :users, path: :gurus, path_names: { sign_in: :login , sign_out: :logout }, controllers: { sessions: 'user/sessions' }
 
-  resources :contacts, only: :create
-  get 'contact-us', to: "contacts#new", as: "new_contact"
+
+  resources :contacts, only: %i[new create]
+
+  devise_for :users, path: :gurus, path_names: { sign_in: :login , sign_out: :logout },
+             controllers: { sessions: 'user/sessions'  }
+
+  #resources :contacts, only: :create
+  #get 'contact-us', to: "contacts#new", as: "new_contact"
 
   resources :tests, only: :index do
     post :start, on: :member
