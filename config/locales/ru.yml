@@ -157,3 +157,15 @@ ru:
       hello: "Привет %{user_name}"
   gist_question_service:
     question_about: "Вопрос про %{test_name} от TestGuru"
+
+  contacts_mailer:
+    contact_email:
+    subject: "TestGuru Project - Контактная Форма"
+
+  contacts:
+    new:
+      header: "Форма обратной связи"
+      send_button: "Отправить"
+    create:
+      success: "E-mail успешно отправлено"
+      failed: "Ошибка при отправке E-mail'a"

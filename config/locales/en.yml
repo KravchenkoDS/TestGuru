@@ -156,3 +156,15 @@ en:
 
   gist_question_service:
     question_about: "A question about %{test_name} from TestGuru"
+
+  contacts_mailer:
+    contact_email:
+      subject: "TestGuru Project - Contact Form"
+
+  contacts:
+    new:
+      header: "Feedback form"
+      send_button: "Send"
+    create:
+      success: "E-mail successfully sent"
+      failed: "Error sending E-mail"
