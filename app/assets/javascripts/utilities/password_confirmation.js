@@ -2,8 +2,12 @@ document.addEventListener('turbolinks:load', function(){
     var password = document.getElementById('user_password');
     var passwordConfirmation = document.getElementById('user_password_confirmation');
 
-    passwordConfirmation.addEventListener('input', passwordCheck);
-    password.addEventListener('input',   passwordCheck);
+    if(password){
+        password.addEventListener('input',   passwordCheck);
+    };
+    if(passwordConfirmation){
+        passwordConfirmation.addEventListener('input', passwordCheck);
+    };
 });
 
 function  passwordCheck(){
