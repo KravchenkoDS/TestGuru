@@ -13,6 +13,7 @@ ru:
       sign_up: "Стань Гуру"
       start_button: "Start"
       show_all_gists: "Показать все Gists"
+      manage_badges: "Награды"
     footer:
       app_description_with_url: "Учебный проект в онлайн-школе Thinknetica"
       app_description: "Приложение для создания, управления и выполнения различных тестов. Тесты с вопросами и вариантами ответов."

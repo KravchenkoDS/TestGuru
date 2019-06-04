@@ -2,6 +2,7 @@
   <%= t('admin.header.welcome') %>,
   <b><%= current_user.full_name.html_safe %></b> <%= t('admin.header.guru') %> |
   <% if current_user.admin? %>
+    <%= link_to t('admin.header.manage_badges'), admin_badges_path, class: 'navbar-brand' %> |
     <%= link_to t('admin.header.admin_panel'), admin_tests_path %> |
   <% end %>
   <%= link_to t('admin.header.log_out'), destroy_user_session_path, method: :delete %>

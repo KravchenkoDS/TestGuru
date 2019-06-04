@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
   <div class="nav-admin user">
     <%= t('admin.header.welcome') %>, <b><%= current_user.full_name.html_safe %></b>
+    <%= link_to t('admin.header.manage_badges'), admin_badges_path, class: 'navbar-brand' %> |
     <%= t('admin.header.guru') %> | <%= t('admin.header.admin_panel_inside')  %> |
     <%= link_to t('admin.header.log_out'), destroy_user_session_path, method: :delete %>
   </div>

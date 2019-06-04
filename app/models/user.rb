@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :passed_tests, dependent: :destroy
   has_many :tests, through: :passed_tests, dependent: :destroy
   has_many :gists
+  has_many :user_badges
+  has_many :badges, through: :user_badges
 
   devise :database_authenticatable,
          :registerable,

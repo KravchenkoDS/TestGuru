@@ -72,7 +72,7 @@ en:
       no_available_answers: "There is no available Answers"
       gist:
         success: "Gist was successfully created! Link: %{url}"
-      failure: "An error occurred while saving gists!"
+        failure: "An error occurred while saving gists!"
 
   admin:
     tests:

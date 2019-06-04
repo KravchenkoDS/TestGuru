@@ -10,6 +10,12 @@ class PassedTestsController < ApplicationController
     @passed_test.accept!(params[:answer_ids])
 
     if @passed_test.completed?
+      badge = BadgesReward.new(@passed_test)
+      badge.call
+
+      if badge.rewarded
+        flash[:notice] = "you are awarded a #{view_context.link_to('badge', badges_path)}.".html_safe
+      end
       TestsMailer.completed_test(@passed_test).deliver_now
       redirect_to result_passed_test_path(@passed_test)
     else
