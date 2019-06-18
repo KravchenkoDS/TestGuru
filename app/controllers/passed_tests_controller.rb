@@ -9,8 +9,11 @@ class PassedTestsController < ApplicationController
     @passed_test.accept!(params[:answer_ids])
 
     if @passed_test.completed?
-      BadgesReward.new(@passed_test).call
-      TestsMailer.completed_test(@passed_test).deliver_now
+      if @passed_test.passed?
+        badges = BadgesReward.new(@passed_test).call
+        @passed_test.user.badges << badges
+        TestsMailer.completed_test(@passed_test).deliver_now
+      end
       redirect_to result_passed_test_path(@passed_test)
     else
       render :show

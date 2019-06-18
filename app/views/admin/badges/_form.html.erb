@@ -9,8 +9,9 @@
     <%= form.text_field :img_url, id: :badge_img_url %>
   </p>
   <p>
-    <%= form.label :rule_name %><br>
-    <%= form.text_field :rule_name, id: :badge_rule_name %>
+    <%= form.label :rule_name %>
+    <br>
+    <%= form.collection_select :rule_name, Badge.all, :rule_name, :rule_name, prompt: true, class: 'form-control' %>
   </p>
   <p>
     <%= form.label :rule_value %><br>
