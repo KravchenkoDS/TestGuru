@@ -1,5 +1,7 @@
 class PassedTest < ApplicationRecord
 
+  scope :passed, -> { where(success: true) }
+
   SUCCESS_SCORE = 85
 
   belongs_to :user
@@ -19,7 +21,7 @@ class PassedTest < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-
+    self.success = passed?
     save!
   end
 

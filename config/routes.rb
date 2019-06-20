@@ -5,6 +5,7 @@ Rails.application.routes.draw do
              controllers: { sessions: 'user/sessions'  }
 
   resources :contacts, only: %i[new create]
+  resources :badges, only: :index
 
   resources :tests, only: :index do
     post :start, on: :member
@@ -27,5 +28,6 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges
   end
 end

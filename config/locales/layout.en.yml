@@ -13,6 +13,8 @@ ru:
       sign_up: "Sign Up"
       start_button: "Старт"
       show_all_gists: "Show all Gists"
+      show_all_rule: "Show award rules"
+      manage_badges: "Manage badges"
     footer:
       app_description_with_url: "Learning project in online-school Thinknetica"
       app_description: "Application for creating, managing and executing of different tests. Tests with questions and answers."

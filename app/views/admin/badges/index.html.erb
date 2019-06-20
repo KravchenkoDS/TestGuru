@@ -1,0 +1,23 @@
+<h1>Badges</h1>
+<p>
+  <%= link_to 'New Badge', new_admin_badge_path %>
+</p>
+<%= render 'common/errors', resource: @badge %>
+<table class="table">
+  <thead>
+  <tr align="center">
+    <th>Title</th>
+    <th>Image</th>
+    <th>Rule_name</th>
+    <th>Rule_value</th>
+    <th colspan="3">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @badges %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to t('navigation.back'), admin_tests_path, class: "btn btn-primary" %>
+</p>

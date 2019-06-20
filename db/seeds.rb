@@ -65,3 +65,9 @@ PassedTest.create(
      {user: daniel, test: ruby},
      {user: bill, test: go_lang}]
 )
+
+Badge.create (
+   [{ title: 'Гуру Бэкэнда', img_url: 'Awards/backender.png',  rule_name: 'all_tests_with_category', rule_value:2 },
+    { title: 'Баловень судьбы', img_url: 'Awards/the_first_time.png', rule_name: 'first_time', rule_value: 1 },
+    { title: 'Гуру Уровня 2', img_url: 'Awards/the_level.png', rule_name: 'all_tests_with_level', rule_value: 2 }]
+)
