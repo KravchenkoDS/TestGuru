@@ -56,6 +56,7 @@ ru:
         title: "Наименование"
         level: "Уровень"
         questions: "Вопросы"
+        time: "Время"
         actions: "Действия"
     test:
       start_button: "Старт"
@@ -87,6 +88,7 @@ ru:
           title: "Название"
           level: "Уровень"
           questions: "Вопросы"
+          time: "Время"
           actions: "Действия"
         no_tests_available: "Нет доступных тестов"
         new_test: "Новый тест"

@@ -1,7 +1,9 @@
 class PassedTestsController < ApplicationController
   before_action :set_passed_test, only: %i[show update result gist]
 
-  def show ;end
+  def show
+    redirect_to result_passed_test_path(@passed_test) if @passed_test.past?
+  end
 
   def result ;end
 

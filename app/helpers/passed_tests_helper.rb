@@ -33,4 +33,12 @@ module PassedTestsHelper
     passed_test.current_question_index / passed_test.total_questions.to_f * 100
   end
 
+  def complete(passed_test)
+    if passed_test.passed? && passed_test.success?
+      t('passed_tests_helper.result.success')
+    else
+      t('passed_tests_helper.result.fail')
+    end
+  end
+
 end

@@ -21,6 +21,11 @@
                                      class: 'form-control' %>
         </p><br>
 
+        <p>
+          <%= form.label :timer %><br>
+          <%= form.number_field :timer, id: :test_timer %>
+        </p>
+
         <p><%= form.submit class: "btn btn-outline-primary" %></p>
       </div>
     <% end %>

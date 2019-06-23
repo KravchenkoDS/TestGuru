@@ -4,9 +4,14 @@
 
     <h1><%= t('.level') %> <%= level_test(@test) %> </h1>
 
+    <p>
+      <%= t('.timer') %>: <%= @test.timer %>
+    </p>
+
     <p><%= render @test.questions %></p>
 
     <%= link_to t('navigation.new_question'), new_admin_test_question_path(test_id: params[:id]) %><br>
+    <%= link_to t('admin.tests.edit.header', test_name: @test.name), edit_admin_test_path(test_id: params[:id]) %><br>
 
     <%= link_to t('navigation.back'), admin_tests_path %>
   </div>

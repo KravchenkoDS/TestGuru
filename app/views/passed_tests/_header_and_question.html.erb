@@ -7,6 +7,10 @@
        aria-valuemin="0" aria-valuemax="100"></div>
 <% end %>
 
+<% if @passed_test.test.timer.present? %>
+  <%= t('.timer') %>:<%= content_tag(:div, (@passed_test.created_at + @passed_test.test.timer).to_f.round(3)*1000, id: :count_d_timer, class: :hide) %>
+<% end %>
+
 <div class="card-header">
   <h5 class="card-title">
     <%= @passed_test.current_question.body %>
