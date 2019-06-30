@@ -46,7 +46,8 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
       rescue_with_question_not_found: "Вопрос не был найден!"
-
+    timer:
+      remain: "Осталось времени"
   tests:
     index:
       header: "Доступные Тесты"

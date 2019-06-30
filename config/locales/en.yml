@@ -44,6 +44,8 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
       rescue_with_question_not_found: "Question was not found!"
+    timer:
+      remain: "Time remain"
 
   tests:
     index:

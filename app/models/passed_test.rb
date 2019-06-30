@@ -19,10 +19,6 @@ class PassedTest < ApplicationRecord
     test.timer? && (created_at + test.timer.seconds).past?
   end
 
-  def time_is_up?
-    (Time.now - created_at) > test.timer if test.timer
-  end
-
   def completed?
     current_question.nil?
   end
