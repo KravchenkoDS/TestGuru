@@ -69,6 +69,7 @@ ru:
       all_quesions_number: "Количество Всех Вопросов в Тесте: %{total_questions}"
       questions_with_correct_answers: "Вопросов с правильными Ответами: %{correct_questions}"
       all_tests: "Все Тесты"
+      time_out: "Время вышло"
     show:
       header: "Прохождение %{passed_test_name} Теста"
       no_available_questions: "Нет доступных Вопросов"

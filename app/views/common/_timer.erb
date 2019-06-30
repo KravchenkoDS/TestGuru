@@ -1,0 +1,5 @@
+<p><%= t('.remain') %>: <%= content_tag :span, @passed_test.test.timer, id: 'timer',
+                                        data: {result_link: result_passed_test_url(@passed_test),
+                                               test_created: @passed_test.created_at.to_i,
+                                               time_test: @passed_test.test.timer}
+%>с.</p>

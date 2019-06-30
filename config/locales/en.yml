@@ -66,6 +66,7 @@ en:
       all_quesions_number: "Number of All Questions in Test: %{total_questions}"
       questions_with_correct_answers: "Questions with Correct Answers: %{correct_questions}"
       all_tests: "All Tests"
+      time_out: "Time out"
     show:
       header: "Passing the %{passed_test_name} Test"
       no_available_questions: "There is no available Questions"

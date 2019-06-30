@@ -1,26 +1,22 @@
 document.addEventListener('turbolinks:load', function() {
-    var field = document.getElementById('count_d_timer');
+    var timer = document.getElementById('timer');
 
-    if (field) {
-        var countDownDate = new Date(Number(field.innerHTML)).getTime();
-        setInterval(changeValue, 1000, countDownDate);
-    }
+    if (timer) { changeTimer(timer) }
 });
 
-function changeValue(countDownDate) {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var minutes = Math.floor(distance / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function changeTimer(timer) {
+    var testCreated = timer.dataset.testCreated,
+        timeTest = timer.dataset.timeTest,
+        timeNow = (Date.now() / 1000).toFixed(),
+        passedTime = timeNow - testCreated;
 
-    document.getElementById("count_d_timer").innerHTML = minutes + "m " + seconds + "s";
-    document.getElementById("count_d_timer").classList.remove('hide');
+    if (passedTime > timeTest) {
+        alert('Время вышло!');
+        window.location.href = timer.dataset.resultLink;
 
-    if (distance <= 0) {
-        var form = document.querySelector('.passed_test-form');
-        var passed_test_id = form.dataset.passed_test_id;
-
-        document.querySelector('.passed_test-form[data-passed_test-id="' + passed_test_id + '"]').submit();
-        document.getElementById("count_d_timer").classList.add('hide');
     }
+
+    timer.textContent = timeTest - passedTime;
+
+    setTimeout(changeTimer, 1000, timer);
 }

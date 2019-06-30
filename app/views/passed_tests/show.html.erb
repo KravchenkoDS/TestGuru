@@ -1,5 +1,7 @@
 <h1><%= t('.header', passed_test_name: @passed_test.test.name) %></h1>
 
+<%= render 'common/timer' if @passed_test.test.timer %>
+
 <% if @passed_test.test.questions.none? %>
 
   <p>

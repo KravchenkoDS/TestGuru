@@ -1,17 +1,14 @@
 module PassedTestsHelper
 
   def success_percentage_result_message(passed_test)
+
     if passed_test.passed?
       result_status = 'success'
-      message = t('passed_tests_helper.result.success')
     else
       result_status = 'fail'
-      message = t('passed_tests_helper.result.fail')
     end
 
-    result_body = [div_percentage_helper(passed_test.success_percentage, result_status),
-                   content_tag(:p, message)]
-
+    result_body = [div_percentage_helper(passed_test.success_percentage, result_status)]
     result_body.join.html_safe
   end
 
