@@ -4,7 +4,7 @@
     <p>
 
     <p><%= complete(@passed_test) %></p>
-    <%= content_tag(:p, t('.time_out')) unless @passed_test.success? %>
+    <%#= content_tag(:p, t('.time_out')) unless @passed_test.success? %>
     </p>
     <p>
       <%= t('.all_quesions_number', total_questions: @passed_test.total_questions) %> <br>
