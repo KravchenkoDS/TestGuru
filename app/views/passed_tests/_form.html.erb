@@ -1,4 +1,4 @@
-<%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |form| %>
+<%= form_with url: passed_test_path(@passed_test), local: true, method: :put, class: 'passed_test-form', data: { test_id: @passed_test.id } do |form| %>
 
   <%= form.collection_check_boxes :answer_ids,
                 @passed_test.current_question.answers, :id, :body, include_hidden: false do |b| %>

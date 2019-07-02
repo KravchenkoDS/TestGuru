@@ -11,9 +11,12 @@ function changeTimer(timer) {
         passedTime = timeNow - testCreated;
 
     if (passedTime > timeTest) {
-        alert('Время вышло!');
-        window.location.href = timer.dataset.resultLink;
+        var form = document.querySelector('.passed_test-form');
+        var testId = form.dataset.testId;
 
+        document.querySelector('.passed_test-form[data-test-id="' + testId + '"]').submit();
+
+        document.getElementById("count_d_timer").classList.add('hide');
     }
 
     timer.textContent = timeTest - passedTime;
