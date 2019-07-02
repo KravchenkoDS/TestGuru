@@ -3,7 +3,7 @@ class PassedTestsController < ApplicationController
 
   def show; end
 
-  def result ;end
+  def result; end
 
   def update
     @passed_test.accept!(params[:answer_ids])
