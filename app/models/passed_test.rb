@@ -25,7 +25,7 @@ class PassedTest < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.success = passed? && out_time?
+    self.success = passed?
     save!
   end
 
