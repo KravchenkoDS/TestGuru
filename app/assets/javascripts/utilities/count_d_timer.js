@@ -15,11 +15,10 @@ function changeTimer(timer) {
         var testId = form.dataset.testId;
 
         document.querySelector('.passed_test-form[data-test-id="' + testId + '"]').submit();
-
-        document.getElementById("count_d_timer").classList.add('hide');
     }
 
     timer.textContent = timeTest - passedTime;
 
     setTimeout(changeTimer, 1000, timer);
+    return 0;
 }

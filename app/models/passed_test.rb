@@ -15,7 +15,7 @@ class PassedTest < ApplicationRecord
     success_percentage >= SUCCESS_SCORE
   end
 
-  def in_time?
+  def out_time?
     test.timer? && (created_at + test.timer.seconds).past?
   end
 
@@ -25,7 +25,7 @@ class PassedTest < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.success = passed? && !in_time?
+    self.success = passed? && out_time?
     save!
   end
 

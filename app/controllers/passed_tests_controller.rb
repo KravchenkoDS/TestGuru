@@ -15,6 +15,8 @@ class PassedTestsController < ApplicationController
         TestsMailer.completed_test(@passed_test).deliver_now
       end
       redirect_to result_passed_test_path(@passed_test)
+    elsif @passed_test.out_time?
+      redirect_to result_passed_test_path(@passed_test)
     else
       render :show
     end
