@@ -15,6 +15,10 @@ class PassedTest < ApplicationRecord
     success_percentage >= SUCCESS_SCORE
   end
 
+  def out_time?
+    test.timer? && (created_at + test.timer.seconds).past?
+  end
+
   def completed?
     current_question.nil?
   end

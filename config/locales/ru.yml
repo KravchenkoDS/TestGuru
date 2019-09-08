@@ -46,7 +46,8 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
       rescue_with_question_not_found: "Вопрос не был найден!"
-
+    timer:
+      remain: "Осталось времени"
   tests:
     index:
       header: "Доступные Тесты"
@@ -56,6 +57,7 @@ ru:
         title: "Наименование"
         level: "Уровень"
         questions: "Вопросы"
+        time: "Время"
         actions: "Действия"
     test:
       start_button: "Старт"
@@ -64,10 +66,11 @@ ru:
 
   passed_tests:
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершено!"
       all_quesions_number: "Количество Всех Вопросов в Тесте: %{total_questions}"
       questions_with_correct_answers: "Вопросов с правильными Ответами: %{correct_questions}"
       all_tests: "Все Тесты"
+      time_out: "Время вышло"
     show:
       header: "Прохождение %{passed_test_name} Теста"
       no_available_questions: "Нет доступных Вопросов"
@@ -87,6 +90,7 @@ ru:
           title: "Название"
           level: "Уровень"
           questions: "Вопросы"
+          time: "Время"
           actions: "Действия"
         no_tests_available: "Нет доступных тестов"
         new_test: "Новый тест"

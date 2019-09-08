@@ -1,7 +1,10 @@
+<%= form_with url: passed_test_path(@passed_test), local: true, method: :put, class: 'result_test-form', data: { test_id: @passed_test.id } do |form| %>
 <div class="row justify-content-md-center mt-3 ">
   <div class="col-md-auto mb-3">
     <h1><%= t('.header', title: @passed_test.test.name) %></h1>
-
+    <p>
+      <p><%= complete(@passed_test) %></p>
+    </p>
     <p>
       <%= t('.all_quesions_number', total_questions: @passed_test.total_questions) %> <br>
       <%= t('.questions_with_correct_answers', correct_questions: @passed_test.correct_questions) %>
@@ -15,3 +18,4 @@
     </div>
   </div>
 </div>
+<% end %>

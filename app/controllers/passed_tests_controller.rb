@@ -1,9 +1,9 @@
 class PassedTestsController < ApplicationController
   before_action :set_passed_test, only: %i[show update result gist]
 
-  def show ;end
+  def show; end
 
-  def result ;end
+  def result; end
 
   def update
     @passed_test.accept!(params[:answer_ids])
@@ -14,6 +14,8 @@ class PassedTestsController < ApplicationController
         @passed_test.user.badges << badges
         TestsMailer.completed_test(@passed_test).deliver_now
       end
+      redirect_to result_passed_test_path(@passed_test)
+    elsif @passed_test.out_time?
       redirect_to result_passed_test_path(@passed_test)
     else
       render :show
